@@ -66,6 +66,7 @@ namespace gcda
             }
             else
             {
+                DialogResult = DialogResult.OK;
                 Close();
             }
         }
@@ -77,6 +78,7 @@ namespace gcda
         /// <param name="e"></param>
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Cancel;
             Close();
         }
     }
