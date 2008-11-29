@@ -31,7 +31,14 @@ namespace gcda
 
         private void gcda_Shown(object sender, EventArgs e)
         {
-            login.ShowDialog();
+            while (login.ShowDialog() != DialogResult.OK)
+            {
+                if (MessageBox.Show("You Must Log In", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Cancel)
+                {
+                    Close();
+                    return;
+                }
+            }
         }
     }
 }
