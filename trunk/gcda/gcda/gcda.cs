@@ -11,6 +11,7 @@ namespace gcda
 {
     public partial class gcda : Form
     {
+        private LoginBox login;
         public gcda()
         {
             InitializeComponent();
@@ -21,6 +22,16 @@ namespace gcda
             gcdaAboutBox ab = new gcdaAboutBox();
 
             ab.ShowDialog(this);
+        }
+
+        private void gcda_Load(object sender, EventArgs e)
+        {
+            login = new LoginBox();
+        }
+
+        private void gcda_Shown(object sender, EventArgs e)
+        {
+            login.ShowDialog();
         }
     }
 }
