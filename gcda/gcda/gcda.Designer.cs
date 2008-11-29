@@ -354,6 +354,8 @@
             this.MainMenuStrip = this.MainMenu;
             this.Name = "gcda";
             this.Text = "Google Contacts Desktop Application";
+            this.Load += new System.EventHandler(this.gcda_Load);
+            this.Shown += new System.EventHandler(this.gcda_Shown);
             this.MainStatusStrip.ResumeLayout(false);
             this.MainStatusStrip.PerformLayout();
             this.MainMenu.ResumeLayout(false);
