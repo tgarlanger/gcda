@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace gcda
 {
-    partial class AboutBox : Form
+    partial class gcdaAboutBox : Form
     {
-        public AboutBox()
+        public gcdaAboutBox()
         {
             InitializeComponent();
             this.Text = String.Format("About {0} {0}", AssemblyTitle);
