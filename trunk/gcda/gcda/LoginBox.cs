@@ -11,6 +11,9 @@ namespace gcda
 {
     public partial class LoginBox : Form
     {
+        /// <summary>
+        /// Access to the User's User Name
+        /// </summary>
         public string UserName
         {
             get
@@ -23,6 +26,9 @@ namespace gcda
             }
         }
 
+        /// <summary>
+        /// Access to the User's Password
+        /// </summary>
         public string Password
         {
             get
@@ -35,11 +41,19 @@ namespace gcda
             }
         }
 
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public LoginBox()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Called when the Ok Button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OKButton_Click(object sender, EventArgs e)
         {
             if (UserNameTextBox.Text.Length <= 3)
@@ -56,6 +70,11 @@ namespace gcda
             }
         }
 
+        /// <summary>
+        /// Called when the Cancel Button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelButton_Click(object sender, EventArgs e)
         {
             Close();
