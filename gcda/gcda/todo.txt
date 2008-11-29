@@ -1,0 +1,7 @@
+﻿Google Contacts have the following lists:
+
+    * gd:email
+    * gd:im
+    * gd:organization
+    * gd:phoneNumber
+    * gd:postalAddress
