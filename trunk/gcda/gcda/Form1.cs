@@ -15,5 +15,12 @@ namespace gcda
         {
             InitializeComponent();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox ab = new AboutBox();
+
+            ab.Show(this);
+        }
     }
 }
