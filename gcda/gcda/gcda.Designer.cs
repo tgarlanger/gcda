@@ -65,6 +65,8 @@
             this.ContactListBox = new System.Windows.Forms.ListBox();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.UserNameStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Seperator1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.MainStatusStrip.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.MainSplitter.Panel1.SuspendLayout();
@@ -74,7 +76,9 @@
             // MainStatusStrip
             // 
             this.MainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MainStatusLabel});
+            this.MainStatusLabel,
+            this.Seperator1,
+            this.UserNameStatusLabel});
             this.MainStatusStrip.Location = new System.Drawing.Point(0, 542);
             this.MainStatusStrip.Name = "MainStatusStrip";
             this.MainStatusStrip.Size = new System.Drawing.Size(784, 22);
@@ -328,6 +332,7 @@
             // MainSplitter
             // 
             this.MainSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainSplitter.IsSplitterFixed = true;
             this.MainSplitter.Location = new System.Drawing.Point(0, 24);
             this.MainSplitter.Name = "MainSplitter";
             // 
@@ -335,7 +340,7 @@
             // 
             this.MainSplitter.Panel1.Controls.Add(this.ContactListBox);
             this.MainSplitter.Size = new System.Drawing.Size(784, 518);
-            this.MainSplitter.SplitterDistance = 187;
+            this.MainSplitter.SplitterDistance = 200;
             this.MainSplitter.TabIndex = 2;
             // 
             // ContactListBox
@@ -344,7 +349,7 @@
             this.ContactListBox.FormattingEnabled = true;
             this.ContactListBox.Location = new System.Drawing.Point(0, 0);
             this.ContactListBox.Name = "ContactListBox";
-            this.ContactListBox.Size = new System.Drawing.Size(187, 511);
+            this.ContactListBox.Size = new System.Drawing.Size(200, 511);
             this.ContactListBox.TabIndex = 0;
             // 
             // toolStripMenuItem1
@@ -357,6 +362,18 @@
             this.connectToolStripMenuItem.Name = "connectToolStripMenuItem";
             this.connectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.connectToolStripMenuItem.Text = "Connect...";
+            // 
+            // UserNameStatusLabel
+            // 
+            this.UserNameStatusLabel.Name = "UserNameStatusLabel";
+            this.UserNameStatusLabel.Size = new System.Drawing.Size(92, 17);
+            this.UserNameStatusLabel.Text = "Not Logged In...";
+            // 
+            // Seperator1
+            // 
+            this.Seperator1.Name = "Seperator1";
+            this.Seperator1.Size = new System.Drawing.Size(10, 17);
+            this.Seperator1.Text = "|";
             // 
             // gcda
             // 
@@ -421,6 +438,8 @@
         private System.Windows.Forms.ListBox ContactListBox;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem connectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel Seperator1;
+        private System.Windows.Forms.ToolStripStatusLabel UserNameStatusLabel;
     }
 }
 
