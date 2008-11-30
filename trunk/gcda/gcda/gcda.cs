@@ -109,5 +109,12 @@ namespace gcda
                 EmailListBox.Items.Add(address);
             }
         }
+
+        private void EmailListBox_DoubleClick(object sender, EventArgs e)
+        {
+            int si = EmailListBox.SelectedIndex;
+
+
+        }
     }
 }
