@@ -81,20 +81,15 @@ namespace gcda
             }
         }
 
-        private void ContactListBox_SelectedIndexChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Retreive and load the contact's email addresses into the Email list
+        /// </summary>
+        /// <param name="entry">Contact to load emails for</param>
+        private void LoadEmailAddresses(ContactEntry entry)
         {
-            EmailListBox.Items.Clear();
-            IMListBox.Items.Clear();
-            OrganizationListBox.Items.Clear();
-            PhoneNumberListBox.Items.Clear();
-            AddressesListBox.Items.Clear();
-
-            int si = ContactListBox.SelectedIndex;
-            NameTextBox.Text = CFeed.Entries[si].Title.Text;
-
-            ContactEntry entry = (ContactEntry)CFeed.Entries[si];
-
             string address;
+
+            EmailListBox.Items.Clear();
 
             foreach (EMail email in entry.Emails)
             {
@@ -112,8 +107,84 @@ namespace gcda
                 {
                     address += "Other";
                 }
+
                 EmailListBox.Items.Add(address);
             }
+
+            EmailListBox.SelectedIndex = 0;
+        }
+
+        /// <summary>
+        /// Retreive and load the contact's phone numbers into the phone number list
+        /// </summary>
+        /// <param name="entry">Contact to load phone numbers for</param>
+        private void LoadPhoneNumbers(ContactEntry entry)
+        {
+            string phonenumber;
+
+            PhoneNumberListBox.Items.Clear();
+
+            foreach (PhoneNumber phone in entry.Phonenumbers)
+            {
+                phonenumber = phone.Value + " - " + phone.Label;
+
+                /*
+                if (phone.Home)
+                {
+                    phonenumber += "Home";
+                }
+                else if (phone.Work)
+                {
+                    phonenumber += "Work";
+                }
+                else if (phone.Other)
+                {
+                    phonenumber += "Other";
+                }
+                 * */
+
+                PhoneNumberListBox.Items.Add(phonenumber);
+            }
+
+            PhoneNumberListBox.SelectedIndex = 0;
+        }
+
+        /// <summary>
+        /// Retreive and load the contact's IM Clients into the IM Client list
+        /// </summary>
+        /// <param name="entry">Contact to load IM Clients for</param>
+        private void LoadIMClients(ContactEntry entry)
+        {
+            string imclient;
+
+            IMListBox.Items.Clear();
+
+            foreach (IMAddress im in entry.IMs)
+            {
+                imclient = im.Address + " - " + im.Protocol;
+
+                IMListBox.Items.Add(imclient);
+            }
+
+            IMListBox.SelectedIndex = 0;
+        }
+
+        private void ContactListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EmailListBox.Items.Clear();
+            IMListBox.Items.Clear();
+            OrganizationListBox.Items.Clear();
+            PhoneNumberListBox.Items.Clear();
+            AddressesListBox.Items.Clear();
+
+            int si = ContactListBox.SelectedIndex;
+            NameTextBox.Text = CFeed.Entries[si].Title.Text;
+
+            ContactEntry entry = (ContactEntry)CFeed.Entries[si];
+
+            LoadEmailAddresses(entry);
+            LoadPhoneNumbers(entry);
+            LoadIMClients(entry);
         }
 
         private void EmailListBox_DoubleClick(object sender, EventArgs e)
@@ -144,16 +215,29 @@ namespace gcda
                     switch (ef.EmailType)
                     {
                         case (int)eTYPE.HOME:
+                            entry.Emails[EmailListBox.SelectedIndex].Rel = ContactsRelationships.IsHome;
                             break;
                         case (int)eTYPE.WORK:
+                            entry.Emails[EmailListBox.SelectedIndex].Rel = ContactsRelationships.IsWork;
                             break;
                         case (int)eTYPE.OTHER:
+                            entry.Emails[EmailListBox.SelectedIndex].Rel = ContactsRelationships.IsOther;
                             break;
                     }
                     break;
                 case DialogResult.Cancel:
                 default:
                     break;
+            }
+        }
+
+        private void EmailListBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            EmailListBox.Select();
+
+            if (e.Button == MouseButtons.Right)
+            {
+                RightClickMenuStrip.Show(MousePosition);
             }
         }
     }
