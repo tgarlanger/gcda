@@ -494,13 +494,14 @@
             // 
             // EmailListBox
             // 
+            this.EmailListBox.ContextMenuStrip = this.RightClickMenuStrip;
             this.EmailListBox.FormattingEnabled = true;
             this.EmailListBox.Location = new System.Drawing.Point(99, 42);
             this.EmailListBox.Name = "EmailListBox";
             this.EmailListBox.Size = new System.Drawing.Size(200, 95);
             this.EmailListBox.TabIndex = 3;
-            this.EmailListBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EmailListBox_MouseClick);
             this.EmailListBox.DoubleClick += new System.EventHandler(this.EmailListBox_DoubleClick);
+            this.EmailListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.EmailListBox_MouseDown);
             // 
             // EmailLabel
             // 
@@ -536,8 +537,8 @@
             this.copyTextRightClickMenuItem});
             this.RightClickMenuStrip.Name = "RightClickMenuStrip";
             this.RightClickMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.RightClickMenuStrip.ShowImageMargin = false;
-            this.RightClickMenuStrip.Size = new System.Drawing.Size(103, 76);
+            this.RightClickMenuStrip.Size = new System.Drawing.Size(128, 76);
+            this.RightClickMenuStrip.Opened += new System.EventHandler(this.RightClickMenuStrip_Opened);
             // 
             // editRightClickMenuItem
             // 

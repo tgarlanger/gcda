@@ -18,6 +18,11 @@ namespace gcda
         HOME = 0, WORK, OTHER
     }
 
+    public enum ActiveBox
+    {
+        NONE, EMAIL, IM, ADDRESS, PHONE, ORGANIZATION
+    }
+
     public partial class gcda : Form
     {
         private LoginBox login;
@@ -26,12 +31,15 @@ namespace gcda
 
         public ContactsFeed CFeed;
 
+        private ActiveBox activebox;
+
         public gcda()
         {
             InitializeComponent();
 
             CService = new ContactsService("gcda");
             CFeed = null;
+            activebox = ActiveBox.NONE;
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -231,14 +239,32 @@ namespace gcda
             }
         }
 
-        private void EmailListBox_MouseClick(object sender, MouseEventArgs e)
+        private void EmailListBox_MouseDown(object sender, MouseEventArgs e)
         {
-            EmailListBox.Select();
+            ListBox lb = (ListBox)sender;
+            Point pt = new Point(e.X, e.Y);
+            int index = EmailListBox.IndexFromPoint(pt);
+            lb.SelectedIndex = index;
 
-            if (e.Button == MouseButtons.Right)
+            activebox = ActiveBox.EMAIL;
+        }
+
+        private void RightClickMenuStrip_Opened(object sender, EventArgs e)
+        {
+            string txt;
+
+            switch (activebox)
             {
-                RightClickMenuStrip.Show(MousePosition);
+                case ActiveBox.EMAIL:
+                    txt = "EMAIL BOX ACTIVE!!!";
+                    break;
+                case ActiveBox.NONE:
+                default:
+                    txt = "NO BOX ACTIVE!!!";
+                    break;
             }
+
+            MessageBox.Show(txt);
         }
     }
 }
