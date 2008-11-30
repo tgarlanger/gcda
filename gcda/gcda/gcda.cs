@@ -89,6 +89,28 @@ namespace gcda
             }
         }
 
+        private void ContactListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EmailListBox.Items.Clear();
+            IMListBox.Items.Clear();
+            OrganizationListBox.Items.Clear();
+            PhoneNumberListBox.Items.Clear();
+            AddressesListBox.Items.Clear();
+
+            int si = ContactListBox.SelectedIndex;
+            NameTextBox.Text = CFeed.Entries[si].Title.Text;
+
+            ContactEntry entry = (ContactEntry)CFeed.Entries[si];
+
+            LoadEmailAddresses(entry);
+            LoadPhoneNumbers(entry);
+            LoadIMClients(entry);
+        }
+
+
+//LOAD LIST BOXES
+        #region LOAD_LIST_BOXES
+
         /// <summary>
         /// Retreive and load the contact's email addresses into the Email list
         /// </summary>
@@ -177,23 +199,11 @@ namespace gcda
             IMListBox.SelectedIndex = 0;
         }
 
-        private void ContactListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            EmailListBox.Items.Clear();
-            IMListBox.Items.Clear();
-            OrganizationListBox.Items.Clear();
-            PhoneNumberListBox.Items.Clear();
-            AddressesListBox.Items.Clear();
+        #endregion LOAD_LIST_BOXES
 
-            int si = ContactListBox.SelectedIndex;
-            NameTextBox.Text = CFeed.Entries[si].Title.Text;
 
-            ContactEntry entry = (ContactEntry)CFeed.Entries[si];
-
-            LoadEmailAddresses(entry);
-            LoadPhoneNumbers(entry);
-            LoadIMClients(entry);
-        }
+//EMAIL LIST BOX
+        #region EMAIL_LIST_BOX
 
         private void EmailListBox_DoubleClick(object sender, EventArgs e)
         {
@@ -249,6 +259,21 @@ namespace gcda
             activebox = ActiveBox.EMAIL;
         }
 
+        private void EmailListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (EmailListBox.SelectedIndex == -1)
+            {
+                RightClickMenuStrip.Enabled = false;
+            }
+            else
+            {
+                RightClickMenuStrip.Enabled = true;
+            }
+        }
+
+        #endregion EMAIL_LIST_BOX
+
+
         private void RightClickMenuStrip_Opened(object sender, EventArgs e)
         {
             string txt;
@@ -264,7 +289,8 @@ namespace gcda
                     break;
             }
 
-            MessageBox.Show(txt);
+            //MessageBox.Show(txt);
         }
+
     }
 }
