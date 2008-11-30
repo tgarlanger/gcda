@@ -110,6 +110,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons\Address-Book.ico" />
+    <Content Include="icons\Computer.ico" />
+    <Content Include="icons\Home.ico" />
+    <Content Include="icons\iChat.ico" />
+    <Content Include="icons\iPod_Grey.ico" />
+    <Content Include="icons\network.ico" />
     <Content Include="todo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
