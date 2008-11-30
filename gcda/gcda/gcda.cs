@@ -18,11 +18,6 @@ namespace gcda
         HOME = 0, WORK, OTHER
     }
 
-    public enum ActiveBox
-    {
-        NONE, EMAIL, IM, ADDRESS, PHONE, ORGANIZATION
-    }
-
     public partial class gcda : Form
     {
         private LoginBox login;
@@ -31,15 +26,12 @@ namespace gcda
 
         public ContactsFeed CFeed;
 
-        private ActiveBox activebox;
-
         public gcda()
         {
             InitializeComponent();
 
             CService = new ContactsService("gcda");
             CFeed = null;
-            activebox = ActiveBox.NONE;
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -207,45 +199,11 @@ namespace gcda
 
         private void EmailListBox_DoubleClick(object sender, EventArgs e)
         {
-            ContactEntry entry = (ContactEntry)CFeed.Entries[ContactListBox.SelectedIndex];
+            if (EmailListBox.SelectedIndex != -1)
+            {
+                ContactEntry entry = (ContactEntry)CFeed.Entries[ContactListBox.SelectedIndex];
 
-            EmailForm ef = new EmailForm();
-
-            ef.EmailAddress = entry.Emails[EmailListBox.SelectedIndex].Address;
-            if (entry.Emails[EmailListBox.SelectedIndex].Home)
-            {
-                ef.EmailType = (int)eTYPE.HOME;
-            }
-            else if (entry.Emails[EmailListBox.SelectedIndex].Work)
-            {
-                ef.EmailType = (int)eTYPE.WORK;
-            }
-            else if (entry.Emails[EmailListBox.SelectedIndex].Other)
-            {
-                ef.EmailType = (int)eTYPE.OTHER;
-            }
-
-            switch (ef.ShowDialog(this))
-            {
-                case DialogResult.OK:
-                    entry.Emails[EmailListBox.SelectedIndex].Address = ef.EmailAddress;
-                    
-                    switch (ef.EmailType)
-                    {
-                        case (int)eTYPE.HOME:
-                            entry.Emails[EmailListBox.SelectedIndex].Rel = ContactsRelationships.IsHome;
-                            break;
-                        case (int)eTYPE.WORK:
-                            entry.Emails[EmailListBox.SelectedIndex].Rel = ContactsRelationships.IsWork;
-                            break;
-                        case (int)eTYPE.OTHER:
-                            entry.Emails[EmailListBox.SelectedIndex].Rel = ContactsRelationships.IsOther;
-                            break;
-                    }
-                    break;
-                case DialogResult.Cancel:
-                default:
-                    break;
+                EditEmailAddress(entry);
             }
         }
 
@@ -255,10 +213,6 @@ namespace gcda
             Point pt = new Point(e.X, e.Y);
             int index = EmailListBox.IndexFromPoint(pt);
             lb.SelectedIndex = index;
-
-            RightClickMenuStrip.Parent = EmailListBox;
-
-            activebox = ActiveBox.EMAIL;
         }
 
         private void EmailListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -281,44 +235,81 @@ namespace gcda
 
         private void RightClickMenuStrip_Opened(object sender, EventArgs e)
         {
-            MessageBox.Show(RightClickMenuStrip.Parent.ToString());
         }
 
         private void copyTextRightClickMenuItem_Click(object sender, EventArgs e)
         {
-            switch (activebox)
+            ListBox lb = (ListBox)RightClickMenuStrip.SourceControl;
+
+            Clipboard.SetText(lb.SelectedItem.ToString());
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListBox lb = (ListBox)RightClickMenuStrip.SourceControl;
+
+            lb.Items.RemoveAt(lb.SelectedIndex);
+        }
+
+        private void editRightClickMenuItem_Click(object sender, EventArgs e)
+        {
+            ListBox lb = (ListBox)RightClickMenuStrip.SourceControl;
+
+            switch (RightClickMenuStrip.SourceControl.Name)
             {
-                case ActiveBox.EMAIL:
-                    Clipboard.SetText(EmailListBox.SelectedItem.ToString());
+                case "EmailListBox":
                     break;
-                case ActiveBox.PHONE:
-                    Clipboard.SetText(PhoneNumberListBox.SelectedItem.ToString());
+            }
+        }
+
+        #endregion RIGHT_CLICK_MENU
+
+//EDIT FORM HELPERS
+        #region EDIT_FORM_HELPERS
+
+        private void EditEmailAddress(ContactEntry entry)
+        {
+            EmailForm ef = new EmailForm();
+
+            ef.EmailAddress = entry.Emails[EmailListBox.SelectedIndex].Address;
+
+            if (entry.Emails[EmailListBox.SelectedIndex].Home)
+            {
+                ef.EmailType = (int)eTYPE.HOME;
+            }
+            else if (entry.Emails[EmailListBox.SelectedIndex].Work)
+            {
+                ef.EmailType = (int)eTYPE.WORK;
+            }
+            else if (entry.Emails[EmailListBox.SelectedIndex].Other)
+            {
+                ef.EmailType = (int)eTYPE.OTHER;
+            }
+
+            switch (ef.ShowDialog(this))
+            {
+                case DialogResult.OK:
+                    entry.Emails[EmailListBox.SelectedIndex].Address = ef.EmailAddress;
+
+                    switch (ef.EmailType)
+                    {
+                        case (int)eTYPE.HOME:
+                            entry.Emails[EmailListBox.SelectedIndex].Rel = ContactsRelationships.IsHome;
+                            break;
+                        case (int)eTYPE.WORK:
+                            entry.Emails[EmailListBox.SelectedIndex].Rel = ContactsRelationships.IsWork;
+                            break;
+                        case (int)eTYPE.OTHER:
+                            entry.Emails[EmailListBox.SelectedIndex].Rel = ContactsRelationships.IsOther;
+                            break;
+                    }
                     break;
-                case ActiveBox.IM:
-                    Clipboard.SetText(IMListBox.SelectedItem.ToString());
-                    break;
-                case ActiveBox.ADDRESS:
-                    Clipboard.SetText(AddressesListBox.SelectedItem.ToString());
-                    break;
-                case ActiveBox.ORGANIZATION:
-                    Clipboard.SetText(OrganizationListBox.SelectedItem.ToString());
-                    break;
-                case ActiveBox.NONE:
+                case DialogResult.Cancel:
                 default:
                     break;
             }
         }
 
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void editRightClickMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        #endregion RIGHT_CLICK_MENU
+        #endregion EDIT_FORM_HELPERS
     }
 }
