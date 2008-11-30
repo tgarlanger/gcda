@@ -256,6 +256,8 @@ namespace gcda
             int index = EmailListBox.IndexFromPoint(pt);
             lb.SelectedIndex = index;
 
+            RightClickMenuStrip.Parent = EmailListBox;
+
             activebox = ActiveBox.EMAIL;
         }
 
@@ -274,23 +276,49 @@ namespace gcda
         #endregion EMAIL_LIST_BOX
 
 
+//RIGHT CLICK MENU
+        #region RIGHT_CLICK_MENU
+
         private void RightClickMenuStrip_Opened(object sender, EventArgs e)
         {
-            string txt;
+            MessageBox.Show(RightClickMenuStrip.Parent.ToString());
+        }
 
+        private void copyTextRightClickMenuItem_Click(object sender, EventArgs e)
+        {
             switch (activebox)
             {
                 case ActiveBox.EMAIL:
-                    txt = "EMAIL BOX ACTIVE!!!";
+                    Clipboard.SetText(EmailListBox.SelectedItem.ToString());
+                    break;
+                case ActiveBox.PHONE:
+                    Clipboard.SetText(PhoneNumberListBox.SelectedItem.ToString());
+                    break;
+                case ActiveBox.IM:
+                    Clipboard.SetText(IMListBox.SelectedItem.ToString());
+                    break;
+                case ActiveBox.ADDRESS:
+                    Clipboard.SetText(AddressesListBox.SelectedItem.ToString());
+                    break;
+                case ActiveBox.ORGANIZATION:
+                    Clipboard.SetText(OrganizationListBox.SelectedItem.ToString());
                     break;
                 case ActiveBox.NONE:
                 default:
-                    txt = "NO BOX ACTIVE!!!";
                     break;
             }
-
-            //MessageBox.Show(txt);
         }
 
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editRightClickMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion RIGHT_CLICK_MENU
     }
 }
