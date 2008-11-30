@@ -67,23 +67,25 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainSplitter = new System.Windows.Forms.SplitContainer();
             this.ContactListBox = new System.Windows.Forms.ListBox();
-            this.InformationSplitter = new System.Windows.Forms.SplitContainer();
-            this.AttributesTabControl = new System.Windows.Forms.TabControl();
-            this.EmailTab = new System.Windows.Forms.TabPage();
-            this.IMTab = new System.Windows.Forms.TabPage();
-            this.OrganizationTab = new System.Windows.Forms.TabPage();
-            this.PhoneTab = new System.Windows.Forms.TabPage();
-            this.AddressesTab = new System.Windows.Forms.TabPage();
             this.UserInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.OrganizationLabel = new System.Windows.Forms.Label();
+            this.IMListBox = new System.Windows.Forms.ListBox();
+            this.IMClientLabel = new System.Windows.Forms.Label();
+            this.EmailListBox = new System.Windows.Forms.ListBox();
+            this.EmailLabel = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.OrganizationListBox = new System.Windows.Forms.ListBox();
+            this.PhoneNumbersLabel = new System.Windows.Forms.Label();
+            this.PhoneNumberListBox = new System.Windows.Forms.ListBox();
+            this.AddressesLabel = new System.Windows.Forms.Label();
+            this.AddressesListBox = new System.Windows.Forms.ListBox();
             this.MainStatusStrip.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.MainSplitter.Panel1.SuspendLayout();
             this.MainSplitter.Panel2.SuspendLayout();
             this.MainSplitter.SuspendLayout();
-            this.InformationSplitter.Panel1.SuspendLayout();
-            this.InformationSplitter.Panel2.SuspendLayout();
-            this.InformationSplitter.SuspendLayout();
-            this.AttributesTabControl.SuspendLayout();
+            this.UserInfoGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainStatusStrip
@@ -92,17 +94,17 @@
             this.MainStatusLabel,
             this.Seperator1,
             this.UserNameStatusLabel});
-            this.MainStatusStrip.Location = new System.Drawing.Point(0, 542);
+            this.MainStatusStrip.Location = new System.Drawing.Point(0, 582);
             this.MainStatusStrip.Name = "MainStatusStrip";
-            this.MainStatusStrip.Size = new System.Drawing.Size(784, 22);
+            this.MainStatusStrip.Size = new System.Drawing.Size(464, 22);
             this.MainStatusStrip.TabIndex = 0;
             this.MainStatusStrip.Text = "MainStatusStrip";
             // 
             // MainStatusLabel
             // 
             this.MainStatusLabel.Name = "MainStatusLabel";
-            this.MainStatusLabel.Size = new System.Drawing.Size(39, 17);
-            this.MainStatusLabel.Text = "Ready";
+            this.MainStatusLabel.Size = new System.Drawing.Size(62, 17);
+            this.MainStatusLabel.Text = "Not Ready";
             // 
             // Seperator1
             // 
@@ -125,7 +127,7 @@
             this.helpToolStripMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(784, 24);
+            this.MainMenu.Size = new System.Drawing.Size(464, 24);
             this.MainMenu.TabIndex = 1;
             this.MainMenu.Text = "menuStrip1";
             // 
@@ -152,7 +154,7 @@
             this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newToolStripMenuItem.Text = "&New";
             // 
             // openToolStripMenuItem
@@ -161,13 +163,13 @@
             this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "&Open";
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(149, 6);
             // 
             // saveToolStripMenuItem
             // 
@@ -175,19 +177,19 @@
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveAsToolStripMenuItem.Text = "Save &As";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // printToolStripMenuItem
             // 
@@ -195,7 +197,7 @@
             this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printToolStripMenuItem.Text = "&Print";
             // 
             // printPreviewToolStripMenuItem
@@ -203,18 +205,18 @@
             this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
             this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // editToolStripMenuItem
@@ -378,9 +380,9 @@
             // 
             // MainSplitter.Panel2
             // 
-            this.MainSplitter.Panel2.Controls.Add(this.InformationSplitter);
-            this.MainSplitter.Size = new System.Drawing.Size(784, 518);
-            this.MainSplitter.SplitterDistance = 200;
+            this.MainSplitter.Panel2.Controls.Add(this.UserInfoGroupBox);
+            this.MainSplitter.Size = new System.Drawing.Size(464, 558);
+            this.MainSplitter.SplitterDistance = 148;
             this.MainSplitter.TabIndex = 2;
             // 
             // ContactListBox
@@ -389,102 +391,138 @@
             this.ContactListBox.FormattingEnabled = true;
             this.ContactListBox.Location = new System.Drawing.Point(0, 0);
             this.ContactListBox.Name = "ContactListBox";
-            this.ContactListBox.Size = new System.Drawing.Size(200, 511);
+            this.ContactListBox.Size = new System.Drawing.Size(148, 550);
             this.ContactListBox.TabIndex = 0;
             this.ContactListBox.SelectedIndexChanged += new System.EventHandler(this.ContactListBox_SelectedIndexChanged);
             // 
-            // InformationSplitter
-            // 
-            this.InformationSplitter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.InformationSplitter.Location = new System.Drawing.Point(0, 0);
-            this.InformationSplitter.Name = "InformationSplitter";
-            this.InformationSplitter.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // InformationSplitter.Panel1
-            // 
-            this.InformationSplitter.Panel1.Controls.Add(this.UserInfoGroupBox);
-            // 
-            // InformationSplitter.Panel2
-            // 
-            this.InformationSplitter.Panel2.Controls.Add(this.AttributesTabControl);
-            this.InformationSplitter.Size = new System.Drawing.Size(580, 518);
-            this.InformationSplitter.SplitterDistance = 200;
-            this.InformationSplitter.TabIndex = 0;
-            // 
-            // AttributesTabControl
-            // 
-            this.AttributesTabControl.Controls.Add(this.PhoneTab);
-            this.AttributesTabControl.Controls.Add(this.AddressesTab);
-            this.AttributesTabControl.Controls.Add(this.OrganizationTab);
-            this.AttributesTabControl.Controls.Add(this.EmailTab);
-            this.AttributesTabControl.Controls.Add(this.IMTab);
-            this.AttributesTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AttributesTabControl.Location = new System.Drawing.Point(0, 0);
-            this.AttributesTabControl.Name = "AttributesTabControl";
-            this.AttributesTabControl.SelectedIndex = 0;
-            this.AttributesTabControl.Size = new System.Drawing.Size(580, 314);
-            this.AttributesTabControl.TabIndex = 0;
-            // 
-            // EmailTab
-            // 
-            this.EmailTab.Location = new System.Drawing.Point(4, 22);
-            this.EmailTab.Name = "EmailTab";
-            this.EmailTab.Padding = new System.Windows.Forms.Padding(3);
-            this.EmailTab.Size = new System.Drawing.Size(572, 288);
-            this.EmailTab.TabIndex = 0;
-            this.EmailTab.Text = "Email Addresses";
-            this.EmailTab.UseVisualStyleBackColor = true;
-            // 
-            // IMTab
-            // 
-            this.IMTab.Location = new System.Drawing.Point(4, 22);
-            this.IMTab.Name = "IMTab";
-            this.IMTab.Size = new System.Drawing.Size(572, 288);
-            this.IMTab.TabIndex = 1;
-            this.IMTab.Text = "IM Clients";
-            this.IMTab.UseVisualStyleBackColor = true;
-            // 
-            // OrganizationTab
-            // 
-            this.OrganizationTab.Location = new System.Drawing.Point(4, 22);
-            this.OrganizationTab.Name = "OrganizationTab";
-            this.OrganizationTab.Size = new System.Drawing.Size(572, 288);
-            this.OrganizationTab.TabIndex = 2;
-            this.OrganizationTab.Text = "Organizations";
-            this.OrganizationTab.UseVisualStyleBackColor = true;
-            // 
-            // PhoneTab
-            // 
-            this.PhoneTab.Location = new System.Drawing.Point(4, 22);
-            this.PhoneTab.Name = "PhoneTab";
-            this.PhoneTab.Size = new System.Drawing.Size(572, 288);
-            this.PhoneTab.TabIndex = 3;
-            this.PhoneTab.Text = "Phone Numbers";
-            this.PhoneTab.UseVisualStyleBackColor = true;
-            // 
-            // AddressesTab
-            // 
-            this.AddressesTab.Location = new System.Drawing.Point(4, 22);
-            this.AddressesTab.Name = "AddressesTab";
-            this.AddressesTab.Size = new System.Drawing.Size(572, 288);
-            this.AddressesTab.TabIndex = 4;
-            this.AddressesTab.Text = "Postal Addresses";
-            this.AddressesTab.UseVisualStyleBackColor = true;
-            // 
             // UserInfoGroupBox
             // 
-            this.UserInfoGroupBox.Location = new System.Drawing.Point(4, 3);
+            this.UserInfoGroupBox.Controls.Add(this.AddressesListBox);
+            this.UserInfoGroupBox.Controls.Add(this.AddressesLabel);
+            this.UserInfoGroupBox.Controls.Add(this.PhoneNumberListBox);
+            this.UserInfoGroupBox.Controls.Add(this.PhoneNumbersLabel);
+            this.UserInfoGroupBox.Controls.Add(this.OrganizationListBox);
+            this.UserInfoGroupBox.Controls.Add(this.OrganizationLabel);
+            this.UserInfoGroupBox.Controls.Add(this.IMListBox);
+            this.UserInfoGroupBox.Controls.Add(this.IMClientLabel);
+            this.UserInfoGroupBox.Controls.Add(this.EmailListBox);
+            this.UserInfoGroupBox.Controls.Add(this.EmailLabel);
+            this.UserInfoGroupBox.Controls.Add(this.textBox1);
+            this.UserInfoGroupBox.Controls.Add(this.NameLabel);
+            this.UserInfoGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserInfoGroupBox.Location = new System.Drawing.Point(0, 0);
             this.UserInfoGroupBox.Name = "UserInfoGroupBox";
-            this.UserInfoGroupBox.Size = new System.Drawing.Size(572, 183);
-            this.UserInfoGroupBox.TabIndex = 0;
+            this.UserInfoGroupBox.Size = new System.Drawing.Size(312, 558);
+            this.UserInfoGroupBox.TabIndex = 1;
             this.UserInfoGroupBox.TabStop = false;
             this.UserInfoGroupBox.Text = "User Information";
+            // 
+            // OrganizationLabel
+            // 
+            this.OrganizationLabel.AutoSize = true;
+            this.OrganizationLabel.Location = new System.Drawing.Point(19, 244);
+            this.OrganizationLabel.Name = "OrganizationLabel";
+            this.OrganizationLabel.Size = new System.Drawing.Size(74, 13);
+            this.OrganizationLabel.TabIndex = 6;
+            this.OrganizationLabel.Text = "Organizations:";
+            // 
+            // IMListBox
+            // 
+            this.IMListBox.FormattingEnabled = true;
+            this.IMListBox.Location = new System.Drawing.Point(99, 143);
+            this.IMListBox.Name = "IMListBox";
+            this.IMListBox.Size = new System.Drawing.Size(200, 95);
+            this.IMListBox.TabIndex = 5;
+            // 
+            // IMClientLabel
+            // 
+            this.IMClientLabel.AutoSize = true;
+            this.IMClientLabel.Location = new System.Drawing.Point(37, 143);
+            this.IMClientLabel.Name = "IMClientLabel";
+            this.IMClientLabel.Size = new System.Drawing.Size(56, 13);
+            this.IMClientLabel.TabIndex = 4;
+            this.IMClientLabel.Text = "IM Clients:";
+            // 
+            // EmailListBox
+            // 
+            this.EmailListBox.FormattingEnabled = true;
+            this.EmailListBox.Location = new System.Drawing.Point(99, 42);
+            this.EmailListBox.Name = "EmailListBox";
+            this.EmailListBox.Size = new System.Drawing.Size(200, 95);
+            this.EmailListBox.TabIndex = 3;
+            // 
+            // EmailLabel
+            // 
+            this.EmailLabel.AutoSize = true;
+            this.EmailLabel.Location = new System.Drawing.Point(6, 42);
+            this.EmailLabel.Name = "EmailLabel";
+            this.EmailLabel.Size = new System.Drawing.Size(87, 13);
+            this.EmailLabel.TabIndex = 2;
+            this.EmailLabel.Text = "Email Addresses:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(99, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(55, 22);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(38, 13);
+            this.NameLabel.TabIndex = 0;
+            this.NameLabel.Text = "Name:";
+            // 
+            // OrganizationListBox
+            // 
+            this.OrganizationListBox.FormattingEnabled = true;
+            this.OrganizationListBox.Location = new System.Drawing.Point(99, 244);
+            this.OrganizationListBox.Name = "OrganizationListBox";
+            this.OrganizationListBox.Size = new System.Drawing.Size(200, 95);
+            this.OrganizationListBox.TabIndex = 7;
+            // 
+            // PhoneNumbersLabel
+            // 
+            this.PhoneNumbersLabel.AutoSize = true;
+            this.PhoneNumbersLabel.Location = new System.Drawing.Point(7, 345);
+            this.PhoneNumbersLabel.Name = "PhoneNumbersLabel";
+            this.PhoneNumbersLabel.Size = new System.Drawing.Size(86, 13);
+            this.PhoneNumbersLabel.TabIndex = 8;
+            this.PhoneNumbersLabel.Text = "Phone Numbers:";
+            // 
+            // PhoneNumberListBox
+            // 
+            this.PhoneNumberListBox.FormattingEnabled = true;
+            this.PhoneNumberListBox.Location = new System.Drawing.Point(99, 345);
+            this.PhoneNumberListBox.Name = "PhoneNumberListBox";
+            this.PhoneNumberListBox.Size = new System.Drawing.Size(200, 95);
+            this.PhoneNumberListBox.TabIndex = 9;
+            // 
+            // AddressesLabel
+            // 
+            this.AddressesLabel.AutoSize = true;
+            this.AddressesLabel.Location = new System.Drawing.Point(33, 443);
+            this.AddressesLabel.Name = "AddressesLabel";
+            this.AddressesLabel.Size = new System.Drawing.Size(59, 13);
+            this.AddressesLabel.TabIndex = 10;
+            this.AddressesLabel.Text = "Addresses:";
+            // 
+            // AddressesListBox
+            // 
+            this.AddressesListBox.FormattingEnabled = true;
+            this.AddressesListBox.Location = new System.Drawing.Point(99, 446);
+            this.AddressesListBox.Name = "AddressesListBox";
+            this.AddressesListBox.Size = new System.Drawing.Size(200, 95);
+            this.AddressesListBox.TabIndex = 11;
             // 
             // gcda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 564);
+            this.ClientSize = new System.Drawing.Size(464, 604);
             this.Controls.Add(this.MainSplitter);
             this.Controls.Add(this.MainStatusStrip);
             this.Controls.Add(this.MainMenu);
@@ -501,10 +539,8 @@
             this.MainSplitter.Panel1.ResumeLayout(false);
             this.MainSplitter.Panel2.ResumeLayout(false);
             this.MainSplitter.ResumeLayout(false);
-            this.InformationSplitter.Panel1.ResumeLayout(false);
-            this.InformationSplitter.Panel2.ResumeLayout(false);
-            this.InformationSplitter.ResumeLayout(false);
-            this.AttributesTabControl.ResumeLayout(false);
+            this.UserInfoGroupBox.ResumeLayout(false);
+            this.UserInfoGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -550,14 +586,19 @@
         private System.Windows.Forms.ToolStripMenuItem connectToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel Seperator1;
         private System.Windows.Forms.ToolStripStatusLabel UserNameStatusLabel;
-        private System.Windows.Forms.SplitContainer InformationSplitter;
-        private System.Windows.Forms.TabControl AttributesTabControl;
-        private System.Windows.Forms.TabPage EmailTab;
-        private System.Windows.Forms.TabPage IMTab;
-        private System.Windows.Forms.TabPage OrganizationTab;
         private System.Windows.Forms.GroupBox UserInfoGroupBox;
-        private System.Windows.Forms.TabPage PhoneTab;
-        private System.Windows.Forms.TabPage AddressesTab;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.Label IMClientLabel;
+        private System.Windows.Forms.ListBox EmailListBox;
+        private System.Windows.Forms.Label EmailLabel;
+        private System.Windows.Forms.ListBox IMListBox;
+        private System.Windows.Forms.Label OrganizationLabel;
+        private System.Windows.Forms.ListBox OrganizationListBox;
+        private System.Windows.Forms.Label PhoneNumbersLabel;
+        private System.Windows.Forms.Label AddressesLabel;
+        private System.Windows.Forms.ListBox PhoneNumberListBox;
+        private System.Windows.Forms.ListBox AddressesListBox;
     }
 }
 
