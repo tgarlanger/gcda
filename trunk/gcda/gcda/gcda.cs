@@ -77,7 +77,37 @@ namespace gcda
 
         private void ContactListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //CFeed.Entries[ContactListBox.SelectedIndex];
+            EmailListBox.Items.Clear();
+            IMListBox.Items.Clear();
+            OrganizationListBox.Items.Clear();
+            PhoneNumberListBox.Items.Clear();
+            AddressesListBox.Items.Clear();
+
+            int si = ContactListBox.SelectedIndex;
+            NameTextBox.Text = CFeed.Entries[si].Title.Text;
+
+            ContactEntry entry = (ContactEntry)CFeed.Entries[si];
+
+            string address;
+
+            foreach (EMail email in entry.Emails)
+            {
+                address = email.Address + " - ";
+
+                if (email.Home)
+                {
+                    address += "Home";
+                }
+                else if (email.Work)
+                {
+                    address += "Work";
+                }
+                else if (email.Other)
+                {
+                    address += "Other";
+                }
+                EmailListBox.Items.Add(address);
+            }
         }
     }
 }

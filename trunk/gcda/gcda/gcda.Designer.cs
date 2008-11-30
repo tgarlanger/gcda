@@ -73,7 +73,7 @@
             this.IMClientLabel = new System.Windows.Forms.Label();
             this.EmailListBox = new System.Windows.Forms.ListBox();
             this.EmailLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
             this.OrganizationListBox = new System.Windows.Forms.ListBox();
             this.PhoneNumbersLabel = new System.Windows.Forms.Label();
@@ -407,7 +407,7 @@
             this.UserInfoGroupBox.Controls.Add(this.IMClientLabel);
             this.UserInfoGroupBox.Controls.Add(this.EmailListBox);
             this.UserInfoGroupBox.Controls.Add(this.EmailLabel);
-            this.UserInfoGroupBox.Controls.Add(this.textBox1);
+            this.UserInfoGroupBox.Controls.Add(this.NameTextBox);
             this.UserInfoGroupBox.Controls.Add(this.NameLabel);
             this.UserInfoGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserInfoGroupBox.Location = new System.Drawing.Point(0, 0);
@@ -460,12 +460,12 @@
             this.EmailLabel.TabIndex = 2;
             this.EmailLabel.Text = "Email Addresses:";
             // 
-            // textBox1
+            // NameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 1;
+            this.NameTextBox.Location = new System.Drawing.Point(99, 19);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(200, 20);
+            this.NameTextBox.TabIndex = 1;
             // 
             // NameLabel
             // 
@@ -587,7 +587,7 @@
         private System.Windows.Forms.ToolStripStatusLabel Seperator1;
         private System.Windows.Forms.ToolStripStatusLabel UserNameStatusLabel;
         private System.Windows.Forms.GroupBox UserInfoGroupBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label IMClientLabel;
         private System.Windows.Forms.ListBox EmailListBox;
