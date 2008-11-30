@@ -55,6 +55,7 @@ namespace gcda
 
             CService.setUserCredentials(login.UserName, login.Password);
 
+            MainStatusLabel.Text = "Ready";
             UserNameStatusLabel.Text = "Logged in as " + login.UserName;
 
             CFeed = CService.Query(query);
@@ -76,7 +77,7 @@ namespace gcda
 
         private void ContactListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CFeed.Entries[ContactListBox.SelectedIndex];
+            //CFeed.Entries[ContactListBox.SelectedIndex];
         }
     }
 }
