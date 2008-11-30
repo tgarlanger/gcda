@@ -9,9 +9,15 @@ using System.Windows.Forms;
 using Google.GData.Client;
 using Google.GData.Contacts;
 using Google.GData.Extensions;
+using gcda.forms;
 
 namespace gcda
 {
+    public enum eTYPE
+    {
+        HOME = 0, WORK, OTHER
+    }
+
     public partial class gcda : Form
     {
         private LoginBox login;
@@ -112,9 +118,43 @@ namespace gcda
 
         private void EmailListBox_DoubleClick(object sender, EventArgs e)
         {
-            int si = EmailListBox.SelectedIndex;
+            ContactEntry entry = (ContactEntry)CFeed.Entries[ContactListBox.SelectedIndex];
 
+            EmailForm ef = new EmailForm();
 
+            ef.EmailAddress = entry.Emails[EmailListBox.SelectedIndex].Address;
+            if (entry.Emails[EmailListBox.SelectedIndex].Home)
+            {
+                ef.EmailType = (int)eTYPE.HOME;
+            }
+            else if (entry.Emails[EmailListBox.SelectedIndex].Work)
+            {
+                ef.EmailType = (int)eTYPE.WORK;
+            }
+            else if (entry.Emails[EmailListBox.SelectedIndex].Other)
+            {
+                ef.EmailType = (int)eTYPE.OTHER;
+            }
+
+            switch (ef.ShowDialog(this))
+            {
+                case DialogResult.OK:
+                    entry.Emails[EmailListBox.SelectedIndex].Address = ef.EmailAddress;
+                    
+                    switch (ef.EmailType)
+                    {
+                        case (int)eTYPE.HOME:
+                            break;
+                        case (int)eTYPE.WORK:
+                            break;
+                        case (int)eTYPE.OTHER:
+                            break;
+                    }
+                    break;
+                case DialogResult.Cancel:
+                default:
+                    break;
+            }
         }
     }
 }

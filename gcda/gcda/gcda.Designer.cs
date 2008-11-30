@@ -527,6 +527,7 @@
             this.Controls.Add(this.MainSplitter);
             this.Controls.Add(this.MainStatusStrip);
             this.Controls.Add(this.MainMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MainMenu;
             this.MaximizeBox = false;
             this.Name = "gcda";
