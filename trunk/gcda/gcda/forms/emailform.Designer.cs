@@ -1,6 +1,6 @@
 ﻿namespace gcda.forms
 {
-    partial class emailform
+    partial class EmailForm
     {
         /// <summary>
         /// Required designer variable.
@@ -96,6 +96,7 @@
             this.OKButton.TabIndex = 1;
             this.OKButton.Text = "Ok";
             this.OKButton.UseVisualStyleBackColor = true;
+            this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
             // CancelButton
             // 
@@ -106,8 +107,9 @@
             this.CancelButton.TabIndex = 2;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // emailform
+            // EmailForm
             // 
             this.AcceptButton = this.OKButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -117,7 +119,7 @@
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OKButton);
             this.Controls.Add(this.EmailGroupBox);
-            this.Name = "emailform";
+            this.Name = "EmailForm";
             this.Text = "Edit Email Address";
             this.EmailGroupBox.ResumeLayout(false);
             this.EmailGroupBox.PerformLayout();
