@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gcda));
             this.MainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.MainStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -80,12 +81,18 @@
             this.EmailLabel = new System.Windows.Forms.Label();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
+            this.RightClickMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editRightClickMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyTextRightClickMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.MainStatusStrip.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.MainSplitter.Panel1.SuspendLayout();
             this.MainSplitter.Panel2.SuspendLayout();
             this.MainSplitter.SuspendLayout();
             this.UserInfoGroupBox.SuspendLayout();
+            this.RightClickMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainStatusStrip
@@ -238,20 +245,20 @@
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.undoToolStripMenuItem.Text = "&Undo";
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.redoToolStripMenuItem.Text = "&Redo";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(141, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
             // 
             // cutToolStripMenuItem
             // 
@@ -259,7 +266,7 @@
             this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cutToolStripMenuItem.Text = "Cu&t";
             // 
             // copyToolStripMenuItem
@@ -268,7 +275,7 @@
             this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.copyToolStripMenuItem.Text = "&Copy";
             // 
             // pasteToolStripMenuItem
@@ -277,18 +284,18 @@
             this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pasteToolStripMenuItem.Text = "&Paste";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(141, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
             // 
             // selectAllToolStripMenuItem
             // 
             this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.selectAllToolStripMenuItem.Text = "Select &All";
             // 
             // toolsToolStripMenuItem
@@ -420,7 +427,7 @@
             // AddressesListBox
             // 
             this.AddressesListBox.FormattingEnabled = true;
-            this.AddressesListBox.Location = new System.Drawing.Point(99, 446);
+            this.AddressesListBox.Location = new System.Drawing.Point(99, 345);
             this.AddressesListBox.Name = "AddressesListBox";
             this.AddressesListBox.Size = new System.Drawing.Size(200, 95);
             this.AddressesListBox.TabIndex = 11;
@@ -428,7 +435,7 @@
             // AddressesLabel
             // 
             this.AddressesLabel.AutoSize = true;
-            this.AddressesLabel.Location = new System.Drawing.Point(33, 443);
+            this.AddressesLabel.Location = new System.Drawing.Point(34, 345);
             this.AddressesLabel.Name = "AddressesLabel";
             this.AddressesLabel.Size = new System.Drawing.Size(59, 13);
             this.AddressesLabel.TabIndex = 10;
@@ -437,7 +444,7 @@
             // PhoneNumberListBox
             // 
             this.PhoneNumberListBox.FormattingEnabled = true;
-            this.PhoneNumberListBox.Location = new System.Drawing.Point(99, 345);
+            this.PhoneNumberListBox.Location = new System.Drawing.Point(99, 143);
             this.PhoneNumberListBox.Name = "PhoneNumberListBox";
             this.PhoneNumberListBox.Size = new System.Drawing.Size(200, 95);
             this.PhoneNumberListBox.TabIndex = 9;
@@ -445,7 +452,7 @@
             // PhoneNumbersLabel
             // 
             this.PhoneNumbersLabel.AutoSize = true;
-            this.PhoneNumbersLabel.Location = new System.Drawing.Point(7, 345);
+            this.PhoneNumbersLabel.Location = new System.Drawing.Point(7, 143);
             this.PhoneNumbersLabel.Name = "PhoneNumbersLabel";
             this.PhoneNumbersLabel.Size = new System.Drawing.Size(86, 13);
             this.PhoneNumbersLabel.TabIndex = 8;
@@ -454,7 +461,7 @@
             // OrganizationListBox
             // 
             this.OrganizationListBox.FormattingEnabled = true;
-            this.OrganizationListBox.Location = new System.Drawing.Point(99, 244);
+            this.OrganizationListBox.Location = new System.Drawing.Point(100, 446);
             this.OrganizationListBox.Name = "OrganizationListBox";
             this.OrganizationListBox.Size = new System.Drawing.Size(200, 95);
             this.OrganizationListBox.TabIndex = 7;
@@ -462,7 +469,7 @@
             // OrganizationLabel
             // 
             this.OrganizationLabel.AutoSize = true;
-            this.OrganizationLabel.Location = new System.Drawing.Point(19, 244);
+            this.OrganizationLabel.Location = new System.Drawing.Point(18, 446);
             this.OrganizationLabel.Name = "OrganizationLabel";
             this.OrganizationLabel.Size = new System.Drawing.Size(74, 13);
             this.OrganizationLabel.TabIndex = 6;
@@ -471,7 +478,7 @@
             // IMListBox
             // 
             this.IMListBox.FormattingEnabled = true;
-            this.IMListBox.Location = new System.Drawing.Point(99, 143);
+            this.IMListBox.Location = new System.Drawing.Point(99, 244);
             this.IMListBox.Name = "IMListBox";
             this.IMListBox.Size = new System.Drawing.Size(200, 95);
             this.IMListBox.TabIndex = 5;
@@ -479,7 +486,7 @@
             // IMClientLabel
             // 
             this.IMClientLabel.AutoSize = true;
-            this.IMClientLabel.Location = new System.Drawing.Point(37, 143);
+            this.IMClientLabel.Location = new System.Drawing.Point(37, 244);
             this.IMClientLabel.Name = "IMClientLabel";
             this.IMClientLabel.Size = new System.Drawing.Size(56, 13);
             this.IMClientLabel.TabIndex = 4;
@@ -492,6 +499,7 @@
             this.EmailListBox.Name = "EmailListBox";
             this.EmailListBox.Size = new System.Drawing.Size(200, 95);
             this.EmailListBox.TabIndex = 3;
+            this.EmailListBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.EmailListBox_MouseClick);
             this.EmailListBox.DoubleClick += new System.EventHandler(this.EmailListBox_DoubleClick);
             // 
             // EmailLabel
@@ -519,6 +527,41 @@
             this.NameLabel.TabIndex = 0;
             this.NameLabel.Text = "Name:";
             // 
+            // RightClickMenuStrip
+            // 
+            this.RightClickMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editRightClickMenuItem,
+            this.deleteToolStripMenuItem,
+            this.toolStripSeparator6,
+            this.copyTextRightClickMenuItem});
+            this.RightClickMenuStrip.Name = "RightClickMenuStrip";
+            this.RightClickMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.RightClickMenuStrip.ShowImageMargin = false;
+            this.RightClickMenuStrip.Size = new System.Drawing.Size(103, 76);
+            // 
+            // editRightClickMenuItem
+            // 
+            this.editRightClickMenuItem.Name = "editRightClickMenuItem";
+            this.editRightClickMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.editRightClickMenuItem.Text = "&Edit";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            // 
+            // copyTextRightClickMenuItem
+            // 
+            this.copyTextRightClickMenuItem.Name = "copyTextRightClickMenuItem";
+            this.copyTextRightClickMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.copyTextRightClickMenuItem.Text = "Copy Text";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(124, 6);
+            // 
             // gcda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -543,6 +586,7 @@
             this.MainSplitter.ResumeLayout(false);
             this.UserInfoGroupBox.ResumeLayout(false);
             this.UserInfoGroupBox.PerformLayout();
+            this.RightClickMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -601,6 +645,11 @@
         private System.Windows.Forms.Label AddressesLabel;
         private System.Windows.Forms.ListBox PhoneNumberListBox;
         private System.Windows.Forms.ListBox AddressesListBox;
+        private System.Windows.Forms.ContextMenuStrip RightClickMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem editRightClickMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem copyTextRightClickMenuItem;
     }
 }
 
