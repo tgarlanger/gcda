@@ -443,6 +443,7 @@
             // 
             // PhoneNumberListBox
             // 
+            this.PhoneNumberListBox.ContextMenuStrip = this.RightClickMenuStrip;
             this.PhoneNumberListBox.FormattingEnabled = true;
             this.PhoneNumberListBox.Location = new System.Drawing.Point(99, 143);
             this.PhoneNumberListBox.Name = "PhoneNumberListBox";
@@ -519,14 +520,16 @@
             // editRightClickMenuItem
             // 
             this.editRightClickMenuItem.Name = "editRightClickMenuItem";
-            this.editRightClickMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.editRightClickMenuItem.Size = new System.Drawing.Size(152, 22);
             this.editRightClickMenuItem.Text = "&Edit";
+            this.editRightClickMenuItem.Click += new System.EventHandler(this.editRightClickMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripSeparator6
             // 
@@ -536,8 +539,9 @@
             // copyTextRightClickMenuItem
             // 
             this.copyTextRightClickMenuItem.Name = "copyTextRightClickMenuItem";
-            this.copyTextRightClickMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.copyTextRightClickMenuItem.Size = new System.Drawing.Size(152, 22);
             this.copyTextRightClickMenuItem.Text = "Copy Text";
+            this.copyTextRightClickMenuItem.Click += new System.EventHandler(this.copyTextRightClickMenuItem_Click);
             // 
             // EmailLabel
             // 
