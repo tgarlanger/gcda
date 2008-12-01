@@ -179,6 +179,14 @@ namespace gcda
             }
         }
 
+        /// <summary>
+        /// Retreive and load the contact's Postal Addresses into the Addresse
+        /// </summary>
+        /// <param name="entry">Contact to load IM Clients for</param>
+        private void LoadAddresses(ContactEntry entry)
+        {
+        }
+
         #endregion LOAD_LIST_BOXES
 
 
