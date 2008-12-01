@@ -72,12 +72,6 @@ namespace gcda
                 {
                     ContactListBox.Items.Add(entry.Title.Text);
                 }
-                //Console.WriteLine(entry.Title.Text);
-                /*
-                foreach (EMail email in entry.Emails)
-                {
-                }
-                 */ 
             }
         }
 
@@ -132,8 +126,6 @@ namespace gcda
 
                 EmailListBox.Items.Add(address);
             }
-
-            EmailListBox.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -167,8 +159,6 @@ namespace gcda
 
                 PhoneNumberListBox.Items.Add(phonenumber);
             }
-
-            PhoneNumberListBox.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -187,8 +177,6 @@ namespace gcda
 
                 IMListBox.Items.Add(imclient);
             }
-
-            IMListBox.SelectedIndex = 0;
         }
 
         #endregion LOAD_LIST_BOXES
