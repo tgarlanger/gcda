@@ -185,6 +185,14 @@ namespace gcda
         /// <param name="entry">Contact to load IM Clients for</param>
         private void LoadAddresses(ContactEntry entry)
         {
+            string address;
+
+            AddressesListBox.Items.Clear();
+
+            foreach (PostalAddress pa in entry.PostalAddresses)
+            {
+
+            }
         }
 
         #endregion LOAD_LIST_BOXES
