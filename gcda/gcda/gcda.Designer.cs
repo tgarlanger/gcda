@@ -431,6 +431,7 @@
             // 
             // AddressesListBox
             // 
+            this.AddressesListBox.ContextMenuStrip = this.RightClickMenuStrip;
             this.AddressesListBox.FormattingEnabled = true;
             this.AddressesListBox.Location = new System.Drawing.Point(99, 345);
             this.AddressesListBox.Name = "AddressesListBox";
@@ -504,6 +505,7 @@
             // 
             // OrganizationListBox
             // 
+            this.OrganizationListBox.ContextMenuStrip = this.RightClickMenuStrip;
             this.OrganizationListBox.FormattingEnabled = true;
             this.OrganizationListBox.Location = new System.Drawing.Point(100, 446);
             this.OrganizationListBox.Name = "OrganizationListBox";
@@ -521,6 +523,7 @@
             // 
             // IMListBox
             // 
+            this.IMListBox.ContextMenuStrip = this.RightClickMenuStrip;
             this.IMListBox.FormattingEnabled = true;
             this.IMListBox.Location = new System.Drawing.Point(99, 244);
             this.IMListBox.Name = "IMListBox";
