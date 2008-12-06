@@ -86,11 +86,18 @@ namespace gcda
             int si = ContactListBox.SelectedIndex;
             NameTextBox.Text = CFeed.Entries[si].Title.Text;
 
-            ContactEntry entry = (ContactEntry)CFeed.Entries[si];
+            try
+            {
+                ContactEntry entry = (ContactEntry)CFeed.Entries[si];
 
-            LoadEmailAddresses(entry);
-            LoadPhoneNumbers(entry);
-            LoadIMClients(entry);
+                LoadEmailAddresses(entry);
+                LoadPhoneNumbers(entry);
+                LoadIMClients(entry);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading profile: " + ex.ToString());
+            }
         }
 
 
@@ -315,5 +322,10 @@ namespace gcda
         }
 
         #endregion EDIT_FORM_HELPERS
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
