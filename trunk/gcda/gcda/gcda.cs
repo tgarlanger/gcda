@@ -192,13 +192,14 @@ namespace gcda
         /// <param name="entry">Contact to load IM Clients for</param>
         private void LoadAddresses(ContactEntry entry)
         {
-            //string address;
+            string address;
 
             AddressesListBox.Items.Clear();
 
             foreach (PostalAddress pa in entry.PostalAddresses)
             {
-                AddressesListBox.Items.Add(pa);
+                address = pa.Value;
+                AddressesListBox.Items.Add(pa.Value);
             }
         }
 
@@ -269,6 +270,9 @@ namespace gcda
             switch (RightClickMenuStrip.SourceControl.Name)
             {
                 case "EmailListBox":
+                    ContactEntry entry = (ContactEntry)CFeed.Entries[ContactListBox.SelectedIndex];
+
+                    EditEmailAddress(entry);
                     break;
             }
         }
