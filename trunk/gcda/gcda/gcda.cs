@@ -366,6 +366,10 @@ namespace gcda
                 WindowState = FormWindowState.Normal;
             }
         }
+
+        private void gcda_FormClosed(object sender, FormClosedEventArgs e)
+        {
+        }
     
     }
 }

@@ -80,6 +80,12 @@
     <Compile Include="forms\emailform.Designer.cs">
       <DependentUpon>emailform.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\phoneform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\phoneform.Designer.cs">
+      <DependentUpon>phoneform.cs</DependentUpon>
+    </Compile>
     <Compile Include="gcda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\emailform.resx">
       <DependentUpon>emailform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\phoneform.resx">
+      <DependentUpon>phoneform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gcda.resx">
       <DependentUpon>gcda.cs</DependentUpon>

@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmailForm));
             this.EmailGroupBox = new System.Windows.Forms.GroupBox();
+            this.PrimaryEmailCheckBox = new System.Windows.Forms.CheckBox();
             this.EmailTypeComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.OKButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
-            this.PrimaryEmailCheckBox = new System.Windows.Forms.CheckBox();
             this.EmailGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +52,17 @@
             this.EmailGroupBox.Size = new System.Drawing.Size(260, 92);
             this.EmailGroupBox.TabIndex = 0;
             this.EmailGroupBox.TabStop = false;
-            this.EmailGroupBox.Text = "Email Info";
+            this.EmailGroupBox.Text = "Email Address Info";
+            // 
+            // PrimaryEmailCheckBox
+            // 
+            this.PrimaryEmailCheckBox.AutoSize = true;
+            this.PrimaryEmailCheckBox.Location = new System.Drawing.Point(88, 69);
+            this.PrimaryEmailCheckBox.Name = "PrimaryEmailCheckBox";
+            this.PrimaryEmailCheckBox.Size = new System.Drawing.Size(94, 17);
+            this.PrimaryEmailCheckBox.TabIndex = 4;
+            this.PrimaryEmailCheckBox.Text = "Primary Email?";
+            this.PrimaryEmailCheckBox.UseVisualStyleBackColor = true;
             // 
             // EmailTypeComboBox
             // 
@@ -112,21 +122,12 @@
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // PrimaryEmailCheckBox
-            // 
-            this.PrimaryEmailCheckBox.AutoSize = true;
-            this.PrimaryEmailCheckBox.Location = new System.Drawing.Point(88, 69);
-            this.PrimaryEmailCheckBox.Name = "PrimaryEmailCheckBox";
-            this.PrimaryEmailCheckBox.Size = new System.Drawing.Size(94, 17);
-            this.PrimaryEmailCheckBox.TabIndex = 4;
-            this.PrimaryEmailCheckBox.Text = "Primary Email?";
-            this.PrimaryEmailCheckBox.UseVisualStyleBackColor = true;
-            // 
             // EmailForm
             // 
             this.AcceptButton = this.OKButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CancelButton;
             this.ClientSize = new System.Drawing.Size(284, 145);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OKButton);
