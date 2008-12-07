@@ -70,13 +70,13 @@
             this.ContactListBox = new System.Windows.Forms.ListBox();
             this.UserInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.AddressesListBox = new System.Windows.Forms.ListBox();
-            this.AddressesLabel = new System.Windows.Forms.Label();
-            this.PhoneNumberListBox = new System.Windows.Forms.ListBox();
             this.RightClickMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editRightClickMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.copyTextRightClickMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddressesLabel = new System.Windows.Forms.Label();
+            this.PhoneNumberListBox = new System.Windows.Forms.ListBox();
             this.PhoneNumbersLabel = new System.Windows.Forms.Label();
             this.OrganizationListBox = new System.Windows.Forms.ListBox();
             this.OrganizationLabel = new System.Windows.Forms.Label();
@@ -438,24 +438,6 @@
             this.AddressesListBox.Size = new System.Drawing.Size(200, 95);
             this.AddressesListBox.TabIndex = 11;
             // 
-            // AddressesLabel
-            // 
-            this.AddressesLabel.AutoSize = true;
-            this.AddressesLabel.Location = new System.Drawing.Point(34, 345);
-            this.AddressesLabel.Name = "AddressesLabel";
-            this.AddressesLabel.Size = new System.Drawing.Size(59, 13);
-            this.AddressesLabel.TabIndex = 10;
-            this.AddressesLabel.Text = "Addresses:";
-            // 
-            // PhoneNumberListBox
-            // 
-            this.PhoneNumberListBox.ContextMenuStrip = this.RightClickMenuStrip;
-            this.PhoneNumberListBox.FormattingEnabled = true;
-            this.PhoneNumberListBox.Location = new System.Drawing.Point(99, 143);
-            this.PhoneNumberListBox.Name = "PhoneNumberListBox";
-            this.PhoneNumberListBox.Size = new System.Drawing.Size(200, 95);
-            this.PhoneNumberListBox.TabIndex = 9;
-            // 
             // RightClickMenuStrip
             // 
             this.RightClickMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -493,6 +475,24 @@
             this.copyTextRightClickMenuItem.Size = new System.Drawing.Size(127, 22);
             this.copyTextRightClickMenuItem.Text = "Copy Text";
             this.copyTextRightClickMenuItem.Click += new System.EventHandler(this.copyTextRightClickMenuItem_Click);
+            // 
+            // AddressesLabel
+            // 
+            this.AddressesLabel.AutoSize = true;
+            this.AddressesLabel.Location = new System.Drawing.Point(34, 345);
+            this.AddressesLabel.Name = "AddressesLabel";
+            this.AddressesLabel.Size = new System.Drawing.Size(59, 13);
+            this.AddressesLabel.TabIndex = 10;
+            this.AddressesLabel.Text = "Addresses:";
+            // 
+            // PhoneNumberListBox
+            // 
+            this.PhoneNumberListBox.ContextMenuStrip = this.RightClickMenuStrip;
+            this.PhoneNumberListBox.FormattingEnabled = true;
+            this.PhoneNumberListBox.Location = new System.Drawing.Point(99, 143);
+            this.PhoneNumberListBox.Name = "PhoneNumberListBox";
+            this.PhoneNumberListBox.Size = new System.Drawing.Size(200, 95);
+            this.PhoneNumberListBox.TabIndex = 9;
             // 
             // PhoneNumbersLabel
             // 
