@@ -12,7 +12,8 @@
     <AssemblyName>gcda</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ApplicationIcon>icons\Address-Book.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>

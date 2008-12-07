@@ -13,11 +13,6 @@ using gcda.forms;
 
 namespace gcda
 {
-    public enum eTYPE
-    {
-        HOME = 0, WORK, OTHER
-    }
-
     public partial class gcda : Form
     {
         private LoginBox login;
@@ -93,6 +88,7 @@ namespace gcda
                 LoadEmailAddresses(entry);
                 LoadPhoneNumbers(entry);
                 LoadIMClients(entry);
+                LoadAddresses(entry);
             }
             catch (Exception ex)
             {
@@ -116,19 +112,29 @@ namespace gcda
 
             foreach (EMail email in entry.Emails)
             {
-                address = email.Address + " - ";
+                if (email.Primary)
+                {
+                    address = "* ";
+                }
+                else
+                {
+                    address = "";
+                }
 
-                if (email.Home)
+                address += email.Address + " - ";
+
+                switch (email.Rel)
                 {
-                    address += "Home";
-                }
-                else if (email.Work)
-                {
-                    address += "Work";
-                }
-                else if (email.Other)
-                {
-                    address += "Other";
+                    case ContactsRelationships.IsHome:
+                        address += "Home";
+                        break;
+                    case ContactsRelationships.IsWork:
+                        address += "Work";
+                        break;
+                    case ContactsRelationships.IsOther:
+                    default:
+                        address += "Other";
+                        break;
                 }
 
                 EmailListBox.Items.Add(address);
@@ -147,22 +153,33 @@ namespace gcda
 
             foreach (PhoneNumber phone in entry.Phonenumbers)
             {
-                phonenumber = phone.Value + " - " + phone.Label;
+                phonenumber = phone.Value + " - ";
 
-                /*
-                if (phone.Home)
+                switch (phone.Rel)
                 {
-                    phonenumber += "Home";
+                    case ContactsRelationships.IsHome:
+                        phonenumber += "Home";
+                        break;
+                    case ContactsRelationships.IsHomeFax:
+                        phonenumber += "Home Fax";
+                        break;
+                    case ContactsRelationships.IsWork:
+                        phonenumber += "Work";
+                        break;
+                    case ContactsRelationships.IsWorkFax:
+                        phonenumber += "Work Fax";
+                        break;
+                    case ContactsRelationships.IsMobile:
+                        phonenumber += "Mobile";
+                        break;
+                    case ContactsRelationships.IsPager:
+                        phonenumber += "Pager";
+                        break;
+                    case ContactsRelationships.IsOther:
+                    default:
+                        phonenumber += "Other";
+                        break;
                 }
-                else if (phone.Work)
-                {
-                    phonenumber += "Work";
-                }
-                else if (phone.Other)
-                {
-                    phonenumber += "Other";
-                }
-                 * */
 
                 PhoneNumberListBox.Items.Add(phonenumber);
             }
@@ -175,12 +192,16 @@ namespace gcda
         private void LoadIMClients(ContactEntry entry)
         {
             string imclient;
+            char delim = '#';
+            string[] client_split = new string[2];
 
             IMListBox.Items.Clear();
 
             foreach (IMAddress im in entry.IMs)
             {
-                imclient = im.Address + " - " + im.Protocol;
+                client_split = im.Protocol.Split(delim);
+
+                imclient = im.Address + " - " + client_split[1];
 
                 IMListBox.Items.Add(imclient);
             }
@@ -195,6 +216,8 @@ namespace gcda
             string address;
 
             AddressesListBox.Items.Clear();
+
+            //MessageBox.Show(entry.PostalAddresses.Count.ToString());
 
             foreach (PostalAddress pa in entry.PostalAddresses)
             {
@@ -288,18 +311,21 @@ namespace gcda
 
             ef.EmailAddress = entry.Emails[EmailListBox.SelectedIndex].Address;
 
-            if (entry.Emails[EmailListBox.SelectedIndex].Home)
+            switch (entry.Emails[EmailListBox.SelectedIndex].Rel)
             {
-                ef.EmailType = (int)eTYPE.HOME;
+                case ContactsRelationships.IsHome:
+                    ef.EmailType = 0;
+                    break;
+                case ContactsRelationships.IsWork:
+                    ef.EmailType = 1;
+                    break;
+                case ContactsRelationships.IsOther:
+                default:
+                    ef.EmailType = 2;
+                    break;
             }
-            else if (entry.Emails[EmailListBox.SelectedIndex].Work)
-            {
-                ef.EmailType = (int)eTYPE.WORK;
-            }
-            else if (entry.Emails[EmailListBox.SelectedIndex].Other)
-            {
-                ef.EmailType = (int)eTYPE.OTHER;
-            }
+
+            ef.PrimaryEmail = entry.Emails[EmailListBox.SelectedIndex].Primary;
 
             switch (ef.ShowDialog(this))
             {
@@ -308,13 +334,14 @@ namespace gcda
 
                     switch (ef.EmailType)
                     {
-                        case (int)eTYPE.HOME:
+                        case 0:
                             entry.Emails[EmailListBox.SelectedIndex].Rel = ContactsRelationships.IsHome;
                             break;
-                        case (int)eTYPE.WORK:
+                        case 1:
                             entry.Emails[EmailListBox.SelectedIndex].Rel = ContactsRelationships.IsWork;
                             break;
-                        case (int)eTYPE.OTHER:
+                        case 2:
+                        default:
                             entry.Emails[EmailListBox.SelectedIndex].Rel = ContactsRelationships.IsOther;
                             break;
                     }
@@ -331,5 +358,6 @@ namespace gcda
         {
             Close();
         }
+    
     }
 }

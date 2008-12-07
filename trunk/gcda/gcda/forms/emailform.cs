@@ -35,6 +35,18 @@ namespace gcda.forms
             }
         }
 
+        public bool PrimaryEmail
+        {
+            get
+            {
+                return PrimaryEmailCheckBox.Checked;
+            }
+            set
+            {
+                PrimaryEmailCheckBox.Checked = value;
+            }
+        }
+
         public EmailForm()
         {
             InitializeComponent();
