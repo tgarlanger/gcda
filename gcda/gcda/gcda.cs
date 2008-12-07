@@ -358,6 +358,14 @@ namespace gcda
         {
             Close();
         }
+
+        private void TrayIcon_DoubleClick(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
     
     }
 }

@@ -86,7 +86,7 @@
             this.EmailLabel = new System.Windows.Forms.Label();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.MainStatusStrip.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.MainSplitter.Panel1.SuspendLayout();
@@ -94,7 +94,6 @@
             this.MainSplitter.SuspendLayout();
             this.UserInfoGroupBox.SuspendLayout();
             this.RightClickMenuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MainStatusStrip
@@ -411,7 +410,6 @@
             // 
             // UserInfoGroupBox
             // 
-            this.UserInfoGroupBox.Controls.Add(this.pictureBox1);
             this.UserInfoGroupBox.Controls.Add(this.AddressesListBox);
             this.UserInfoGroupBox.Controls.Add(this.AddressesLabel);
             this.UserInfoGroupBox.Controls.Add(this.PhoneNumberListBox);
@@ -579,13 +577,12 @@
             this.NameLabel.TabIndex = 0;
             this.NameLabel.Text = "Name:";
             // 
-            // pictureBox1
+            // TrayIcon
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(10, 58);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.TrayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("TrayIcon.Icon")));
+            this.TrayIcon.Text = "Google Cotacts Desktop Application";
+            this.TrayIcon.Visible = true;
+            this.TrayIcon.DoubleClick += new System.EventHandler(this.TrayIcon_DoubleClick);
             // 
             // gcda
             // 
@@ -613,7 +610,6 @@
             this.UserInfoGroupBox.ResumeLayout(false);
             this.UserInfoGroupBox.PerformLayout();
             this.RightClickMenuStrip.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -677,7 +673,7 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem copyTextRightClickMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.NotifyIcon TrayIcon;
     }
 }
 
