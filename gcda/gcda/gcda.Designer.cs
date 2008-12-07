@@ -86,6 +86,7 @@
             this.EmailLabel = new System.Windows.Forms.Label();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MainStatusStrip.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.MainSplitter.Panel1.SuspendLayout();
@@ -93,6 +94,7 @@
             this.MainSplitter.SuspendLayout();
             this.UserInfoGroupBox.SuspendLayout();
             this.RightClickMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MainStatusStrip
@@ -101,9 +103,9 @@
             this.MainStatusLabel,
             this.Seperator1,
             this.UserNameStatusLabel});
-            this.MainStatusStrip.Location = new System.Drawing.Point(0, 582);
+            this.MainStatusStrip.Location = new System.Drawing.Point(0, 592);
             this.MainStatusStrip.Name = "MainStatusStrip";
-            this.MainStatusStrip.Size = new System.Drawing.Size(464, 22);
+            this.MainStatusStrip.Size = new System.Drawing.Size(594, 22);
             this.MainStatusStrip.TabIndex = 0;
             this.MainStatusStrip.Text = "MainStatusStrip";
             // 
@@ -134,7 +136,7 @@
             this.helpToolStripMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(464, 24);
+            this.MainMenu.Size = new System.Drawing.Size(594, 24);
             this.MainMenu.TabIndex = 1;
             this.MainMenu.Text = "menuStrip1";
             // 
@@ -393,8 +395,8 @@
             // MainSplitter.Panel2
             // 
             this.MainSplitter.Panel2.Controls.Add(this.UserInfoGroupBox);
-            this.MainSplitter.Size = new System.Drawing.Size(464, 558);
-            this.MainSplitter.SplitterDistance = 148;
+            this.MainSplitter.Size = new System.Drawing.Size(594, 568);
+            this.MainSplitter.SplitterDistance = 189;
             this.MainSplitter.TabIndex = 2;
             // 
             // ContactListBox
@@ -403,12 +405,13 @@
             this.ContactListBox.FormattingEnabled = true;
             this.ContactListBox.Location = new System.Drawing.Point(0, 0);
             this.ContactListBox.Name = "ContactListBox";
-            this.ContactListBox.Size = new System.Drawing.Size(148, 550);
+            this.ContactListBox.Size = new System.Drawing.Size(189, 563);
             this.ContactListBox.TabIndex = 0;
             this.ContactListBox.SelectedIndexChanged += new System.EventHandler(this.ContactListBox_SelectedIndexChanged);
             // 
             // UserInfoGroupBox
             // 
+            this.UserInfoGroupBox.Controls.Add(this.pictureBox1);
             this.UserInfoGroupBox.Controls.Add(this.AddressesListBox);
             this.UserInfoGroupBox.Controls.Add(this.AddressesLabel);
             this.UserInfoGroupBox.Controls.Add(this.PhoneNumberListBox);
@@ -424,7 +427,7 @@
             this.UserInfoGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserInfoGroupBox.Location = new System.Drawing.Point(0, 0);
             this.UserInfoGroupBox.Name = "UserInfoGroupBox";
-            this.UserInfoGroupBox.Size = new System.Drawing.Size(312, 558);
+            this.UserInfoGroupBox.Size = new System.Drawing.Size(401, 568);
             this.UserInfoGroupBox.TabIndex = 1;
             this.UserInfoGroupBox.TabStop = false;
             this.UserInfoGroupBox.Text = "User Information";
@@ -435,7 +438,7 @@
             this.AddressesListBox.FormattingEnabled = true;
             this.AddressesListBox.Location = new System.Drawing.Point(99, 345);
             this.AddressesListBox.Name = "AddressesListBox";
-            this.AddressesListBox.Size = new System.Drawing.Size(200, 95);
+            this.AddressesListBox.Size = new System.Drawing.Size(290, 95);
             this.AddressesListBox.TabIndex = 11;
             // 
             // RightClickMenuStrip
@@ -491,7 +494,7 @@
             this.PhoneNumberListBox.FormattingEnabled = true;
             this.PhoneNumberListBox.Location = new System.Drawing.Point(99, 143);
             this.PhoneNumberListBox.Name = "PhoneNumberListBox";
-            this.PhoneNumberListBox.Size = new System.Drawing.Size(200, 95);
+            this.PhoneNumberListBox.Size = new System.Drawing.Size(290, 95);
             this.PhoneNumberListBox.TabIndex = 9;
             // 
             // PhoneNumbersLabel
@@ -509,7 +512,7 @@
             this.OrganizationListBox.FormattingEnabled = true;
             this.OrganizationListBox.Location = new System.Drawing.Point(100, 446);
             this.OrganizationListBox.Name = "OrganizationListBox";
-            this.OrganizationListBox.Size = new System.Drawing.Size(200, 95);
+            this.OrganizationListBox.Size = new System.Drawing.Size(290, 95);
             this.OrganizationListBox.TabIndex = 7;
             // 
             // OrganizationLabel
@@ -527,7 +530,7 @@
             this.IMListBox.FormattingEnabled = true;
             this.IMListBox.Location = new System.Drawing.Point(99, 244);
             this.IMListBox.Name = "IMListBox";
-            this.IMListBox.Size = new System.Drawing.Size(200, 95);
+            this.IMListBox.Size = new System.Drawing.Size(290, 95);
             this.IMListBox.TabIndex = 5;
             // 
             // IMClientLabel
@@ -545,7 +548,7 @@
             this.EmailListBox.FormattingEnabled = true;
             this.EmailListBox.Location = new System.Drawing.Point(99, 42);
             this.EmailListBox.Name = "EmailListBox";
-            this.EmailListBox.Size = new System.Drawing.Size(200, 95);
+            this.EmailListBox.Size = new System.Drawing.Size(290, 95);
             this.EmailListBox.TabIndex = 3;
             this.EmailListBox.SelectedIndexChanged += new System.EventHandler(this.EmailListBox_SelectedIndexChanged);
             this.EmailListBox.DoubleClick += new System.EventHandler(this.EmailListBox_DoubleClick);
@@ -564,7 +567,7 @@
             // 
             this.NameTextBox.Location = new System.Drawing.Point(99, 19);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(200, 20);
+            this.NameTextBox.Size = new System.Drawing.Size(290, 20);
             this.NameTextBox.TabIndex = 1;
             // 
             // NameLabel
@@ -576,14 +579,23 @@
             this.NameLabel.TabIndex = 0;
             this.NameLabel.Text = "Name:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(10, 58);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // gcda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 604);
+            this.ClientSize = new System.Drawing.Size(594, 614);
             this.Controls.Add(this.MainSplitter);
             this.Controls.Add(this.MainStatusStrip);
             this.Controls.Add(this.MainMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MainMenu;
             this.MaximizeBox = false;
@@ -601,6 +613,7 @@
             this.UserInfoGroupBox.ResumeLayout(false);
             this.UserInfoGroupBox.PerformLayout();
             this.RightClickMenuStrip.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -664,6 +677,7 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem copyTextRightClickMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
