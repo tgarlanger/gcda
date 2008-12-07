@@ -89,6 +89,9 @@ namespace gcda
                 LoadPhoneNumbers(entry);
                 LoadIMClients(entry);
                 LoadAddresses(entry);
+
+                //UserPhotoBox.ImageLocation = entry.PhotoUri.AbsoluteUri;
+                //MessageBox.Show(entry.PhotoUri.AbsoluteUri);
             }
             catch (Exception ex)
             {

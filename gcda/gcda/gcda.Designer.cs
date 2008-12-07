@@ -87,6 +87,7 @@
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
             this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.UserPhotoBox = new System.Windows.Forms.PictureBox();
             this.MainStatusStrip.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.MainSplitter.Panel1.SuspendLayout();
@@ -94,6 +95,7 @@
             this.MainSplitter.SuspendLayout();
             this.UserInfoGroupBox.SuspendLayout();
             this.RightClickMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPhotoBox)).BeginInit();
             this.SuspendLayout();
             // 
             // MainStatusStrip
@@ -410,6 +412,7 @@
             // 
             // UserInfoGroupBox
             // 
+            this.UserInfoGroupBox.Controls.Add(this.UserPhotoBox);
             this.UserInfoGroupBox.Controls.Add(this.AddressesListBox);
             this.UserInfoGroupBox.Controls.Add(this.AddressesLabel);
             this.UserInfoGroupBox.Controls.Add(this.PhoneNumberListBox);
@@ -584,6 +587,14 @@
             this.TrayIcon.Visible = true;
             this.TrayIcon.DoubleClick += new System.EventHandler(this.TrayIcon_DoubleClick);
             // 
+            // UserPhotoBox
+            // 
+            this.UserPhotoBox.Location = new System.Drawing.Point(9, 58);
+            this.UserPhotoBox.Name = "UserPhotoBox";
+            this.UserPhotoBox.Size = new System.Drawing.Size(83, 79);
+            this.UserPhotoBox.TabIndex = 12;
+            this.UserPhotoBox.TabStop = false;
+            // 
             // gcda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -611,6 +622,7 @@
             this.UserInfoGroupBox.ResumeLayout(false);
             this.UserInfoGroupBox.PerformLayout();
             this.RightClickMenuStrip.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.UserPhotoBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -675,6 +687,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem copyTextRightClickMenuItem;
         private System.Windows.Forms.NotifyIcon TrayIcon;
+        private System.Windows.Forms.PictureBox UserPhotoBox;
     }
 }
 
