@@ -1,0 +1,1 @@
+A program for windows to access, modify, and update your google contacts.  Going forward, hopefully adding support to sync contacts with the native windows contacts of windows vista.
